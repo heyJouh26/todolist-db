@@ -11,11 +11,11 @@ app.use("/static", express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 
-//connection to db
+//connection to mongodb atlas
 mongoose.set("useFindAndModify", false);
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
-    console.log("Connected to database");
-    app.listen(8000, () => console.log("Server Up and running"));
+    console.log("Connected to MongoDB Atlas database");
+    app.listen(8000, () => console.log("Server is running on port 8000"));
 });
 
 mongodb://jocelyn:jouh1823@todolist-shard-00-00.76z0e.mongodb.net:27017,todolist-shard-00-01.76z0e.mongodb.net:27017,todolist-shard-00-02.76z0e.mongodb.net:27017/todolist?ssl=true&replicaSet=atlas-7r3s9r-shard-0&authSource=admin&retryWrites=true&w=majority
