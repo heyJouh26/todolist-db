@@ -13,7 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 
 //connection to mongodb atlas
 mongoose.set("useFindAndModify", false);
-mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
+mongoose.connect(process.env.DB_CONNECT, { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    }, () => {
     console.log("Connected to MongoDB Atlas database");
     app.listen(8000, () => console.log("Server is running on port 8000"));
 });

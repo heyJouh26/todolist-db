@@ -5,8 +5,10 @@
     }
     body {
     background: #605d63;
+    background-image: url(/img/friends.jpg);
+    background-repeat: no-repeat repeat;
     }
-    
+
     .todo-container {
     color: rgb(17, 15, 15);
     position: absolute;
